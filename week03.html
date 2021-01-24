@@ -36,6 +36,33 @@
             <p>Finding all the Properties of an Object</p>
             <p>In this example, we create a variable called key . We then iterate over the properties of the superman object and use key to log the property name and superman[key] to look up the value of each property.</p>
             <img class="img-fluid" src="images/img-w3-5.png" alt="...">
+            <br>
+            <br>
+            <h4>Ch6: Document Object Model</h4>
+            <p>The Document Object Model, or DOM for short, represents an HTML document as a network of connected nodes that form a tree-like structure.</p>
+            <p>The DOM treats everything on a web page as a node. HTML tags, the text inside these tags, even the attributes of a tag are all nodes. The HTML tag is the root node, and every other part of the document is a child node of this.</p>
+            <p>Getting Elements</p>
+            <p>The DOM provides several methods that allow us to access any element on a page. These methods will return a node object or a node list, which is an array-like object. These objects can then be assigned to a variable and be inspected or modified.</p>
+            <p>The getElementById() method does exactly what it says on the tin. It returns a reference to the element with a unique id attribute that is given as an argument. For example, we can get a reference to the
+                <p> heading element with the id of 'title' in the 'heroes.html' page by writing this in the console:</p>
+                <img class="img-fluid" src="images/img-w3-6.png" alt="...">
+                <p>getElementsByTagName() will return a live node list of all the elements with the tag name that is provided as an argument. For example, we can get all the list items (HTML tag of li in the document using this code:</p>
+                <img class="img-fluid" src="images/img-w3-7.png" alt="...">
+                <img class="img-fluid" src="images/img-w3-8.png" alt="...">
+                <p>getElementsByClassName() will return a live node list of all elements that have the class name that is supplied as an argument. For example, we can return a collection of all elements with the class of 'hero' using the following code:</p>
+                <img class="img-fluid" src="images/img-w3-9.png" alt="...">
+                <br>
+                <br>
+                <h4>Ch7: Events</h4>
+                <p>Imagine you’re waiting for a really important email that you need to act upon as soon as it arrives, but you also have some JavaScript programming to do. You could keep checking your email every couple of minutes to see if the message
+                    has arrived, but this will cause lots of interruptions to your progress creating the next killer app. Not to mention you might be unable to check your email at the exact moment the message arrives, so it might be too late to act upon.
+                    The obvious answer is to set up a notification that will pop up as soon as the email arrives. You can happily program away without the distraction of constantly checking your email, because you'll receive a satisfying 'ping' as soon
+                    as the email arrives.</p>
+                <p>Event listeners in JavaScript work in much the same way. They are like setting a notification to alert you when something happens. Instead of the program having to constantly check to see if an event has occurred, the event listener will
+                    let it know when the event happens, and the program can then respond appropriately. This allows the program to continue with other tasks while it waits for the event to happen.</p>
+                <img class="img-fluid" src="images/img-w3-10.png" alt="...">
+                <img class="img-fluid" src="images/img-w3-11.png" alt="...">
+                <img class="img-fluid" src="images/img-w3-12.png" alt="...">
         </article>
     </section>
 </body>
