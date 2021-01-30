@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            background-color: #393939;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 500px;
+            height: 500px;
+        }
+        
+        .row {
+            width: 100%;
+            display: flex;
+        }
+        
+        .box {
+            width: 166px;
+            height: 166px;
+            border: 1px solid white;
+            border-top: none;
+            border-bottom: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 8rem;
+            text-align: center;
+            vertical-align: center;
+        }
+        
+        .row:first-child {
+            border-bottom: 1px solid white;
+        }
+        
+        .row:last-child {
+            border-top: 1px solid white;
+        }
+        
+        .box:first-child {
+            border-left: none;
+        }
+        
+        .box:last-child {
+            border-right: none;
+        }
+        
+        .cont-table {
+            width: 100%;
+            height: 200px;
+            display: flex;
+        }
+        
+        .cont-table div:first-child {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cont-table div:last-child {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(255, 196, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        
+        button {
+            width: 80%;
+            height: 45px;
+            background-color: rgb(255, 196, 0);
+            font-size: 14pt;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="row">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="row">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <div class="cont-table">
+            <div>
+                <button onclick="reset()">Reset</button>
+            </div>
+            <div>
+                <h2>Player 1, starts the game</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- My script -->
+    <script>
+        const show = document.getElementsByTagName('h2');
+        const text1 = "Player 1 is your turn";
+        const text2 = "Player 2 is your turn";
+        const player1 = "x";
+        const player2 = "o";
+        let player = player2;
+        let value = [];
+
+        /* This event listener is ready to detect a click in the container div  */
+        document.querySelector('.container').addEventListener("click", addPiece);
+        document.querySelector('.container').addEventListener("click", winner);
+        document.querySelector('.container').addEventListener("click", tie);
+
+        function addPiece(piece) {
+            /* if the initial value is X, it'll replace the X with O */
+            if (player == player1) {
+                player = player2;
+                /* Show the text1 | the "show" is an array because getting the element by tag name.*/
+                show[0].innerHTML = text1;
+            } else {
+                player = player1;
+                show[0].innerHTML = text2;
+            }
+            /* The target event property returns the element that triggered the event. */
+            piece.target.innerHTML = player;
+        }
+
+        function reset() {
+            /* go over all clases called .box one by one */
+            const board = document.getElementsByClassName("box");
+            let i;
+            for (i = 0; i < board.length; i++) {
+                /* Replace everything */
+                board[i].innerHTML = "";
+            }
+            /* Reset the text at the beginning */
+            show[0].innerHTML = "Player 1, starts the game";
+            /* Reset the initial value */
+            player = player2;
+        }
+
+        function tie() {
+
+            /* If the "X" appears 5 times it means that the table is full and nothing wins. */
+            /* sometimes the letter "x" could appear 5 times and have a winner at the last moment. */
+            /* In this case, there is another condition to declare a tie | The function "winner" needs to return the word "win" if this declaration is true the tie is not possible. */
+            const checkWinner = winner();
+
+            /* check how many times the "x" was put on */
+            let count = 0;
+            for (let i = 0; i < value.length; i++) {
+                if (value[i] === "x") {
+                    count++;
+                }
+            }
+            /* If the "X" appears 5 times it means that the table is full and nothing wins. */
+            if (count == 5 && checkWinner !== "win") {
+                show[0].innerHTML = "TIE :(";
+            }
+        }
+
+        function winner() {
+
+            /* Checks all elements with the "box" class */
+            const board = document.getElementsByClassName("box");
+            let i;
+            for (i = 0; i < board.length; i++) {
+                /* Replace everything */
+                /*board[i].innerHTML = "";*/
+                value[i] = board[i].innerText;
+            }
+
+            /* In this game, there are specific combinations to win, (8 combinations) */
+            /* Each box has a position in an array and if you know where are the letters "x" or "o" in this array you can determine if the player wins or not. */
+
+
+            if (value[0] === "x" && value[1] === "x" && value[2] === "x") {
+                show[0].innerHTML = "PLAYER 1 WINS !!!";
+                return "win";
+            } else if (value[3] === "x" && value[4] === "x" && value[5] === "x") {
+                show[0].innerHTML = "PLAYER 1 WINS !!!";
+                return "win";
+            } else if (value[6] === "x" && value[7] === "x" && value[8] === "x") {
+                show[0].innerHTML = "PLAYER 1 WINS !!!";
+                return "win";
+            } else if (value[0] === "x" && value[3] === "x" && value[6] === "x") {
+                show[0].innerHTML = "PLAYER 1 WINS !!!";
+                return "win";
+            } else if (value[1] === "x" && value[4] === "x" && value[7] === "x") {
+                show[0].innerHTML = "PLAYER 1 WINS !!!";
+                return "win";
+            } else if (value[2] === "x" && value[5] === "x" && value[8] === "x") {
+                show[0].innerHTML = "PLAYER 1 WINS !!!";
+                return "win";
+            } else if (value[0] === "x" && value[4] === "x" && value[8] === "x") {
+                show[0].innerHTML = "PLAYER 1 WINS !!!";
+                return "win";
+            } else if (value[6] === "x" && value[4] === "x" && value[2] === "x") {
+                show[0].innerHTML = "PLAYER 1 WINS !!!";
+                return "win";
+            }
+
+            /* the same case for the letter "o" */
+
+            if (value[0] === "o" && value[1] === "o" && value[2] === "o") {
+                show[0].innerHTML = "PLAYER 2 WINS !!!";
+                return "win";
+            } else if (value[3] === "o" && value[4] === "o" && value[5] === "o") {
+                show[0].innerHTML = "PLAYER 2 WINS !!!";
+                return "win";
+            } else if (value[6] === "o" && value[7] === "o" && value[8] === "o") {
+                show[0].innerHTML = "PLAYER 2 WINS !!!";
+                return "win";
+            } else if (value[0] === "o" && value[3] === "o" && value[6] === "o") {
+                show[0].innerHTML = "PLAYER 2 WINS !!!";
+                return "win";
+            } else if (value[1] === "o" && value[4] === "o" && value[7] === "o") {
+                show[0].innerHTML = "PLAYER 2 WINS !!!";
+                return "win";
+            } else if (value[2] === "o" && value[5] === "o" && value[8] === "o") {
+                show[0].innerHTML = "PLAYER 2 WINS !!!";
+                return "win";
+            } else if (value[0] === "o" && value[4] === "o" && value[8] === "o") {
+                show[0].innerHTML = "PLAYER 2 WINS !!!";
+                return "win";
+            } else if (value[6] === "o" && value[4] === "o" && value[2] === "o") {
+                show[0].innerHTML = "PLAYER 2 WINS !!!";
+                return "win";
+            }
+            //console.log(value);
+            //console.log(value[0]);
+        }
+    </script>
+</body>
+
+</html>
