@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap');
+body {
+    background: rgb(147, 147, 147);
+    background: radial-gradient(circle, rgba(147, 147, 147, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    height: 100vh;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: linear-gradient(13deg, #ffa273 14%, #ff8800 60%);
+    border-radius: 10px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #858585;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #ffffff00;
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px #f0f0f0;
+}
+
+#container {
+    width: 500px;
+    height: auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    padding: 2%;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(227, 227, 227, 1) 100%);
+    /* Borders */
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 0px solid #000000;
+    /* Shadows */
+    -webkit-box-shadow: 0px 10px 20px 6px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 10px 20px 6px rgba(0, 0, 0, 1);
+    box-shadow: 0px 10px 20px 6px rgba(0, 0, 0, 1);
+}
+
+#cont-titles {
+    width: 100%;
+    color: orange;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#cont-titles h1 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+#cont-boxes {
+    width: 99%;
+    height: 350px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-right: 1%;
+    background: rgb(200, 200, 200);
+    background: linear-gradient(0deg, rgba(200, 200, 200, 1) 0%, rgba(228, 228, 228, 1) 1%, rgba(255, 255, 255, 0) 3%, rgba(255, 255, 255, 0) 97%, rgba(228, 228, 228, 1) 99%, rgba(200, 200, 200, 1) 100%);
+}
+
+.box {
+    width: 100%;
+    border: 1px solid #c9c9c9;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    margin-bottom: 10px;
+    /* Borders */
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    /*shadows*/
+    -webkit-box-shadow: -1px 8px 2px -1px rgba(57, 57, 57, 0.12);
+    -moz-box-shadow: -1px 8px 2px -1px rgba(57, 57, 57, 0.12);
+    box-shadow: -1px 8px 2px -1px rgba(57, 57, 57, 0.12);
+    /*Background*/
+    background: rgb(228, 228, 228);
+    background: linear-gradient(0deg, rgba(228, 228, 228, 1) 0%, rgba(255, 255, 255, 1) 11%, rgba(255, 255, 255, 1) 89%, rgba(228, 228, 228, 1) 100%);
+}
+
+.check {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.check-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    width: 60%;
+}
+
+.delete {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-box {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preliminar {
+    width: 100%;
+    text-align: center;
+    color: gray;
+    font-style: italic;
+}
+
+
+/* ------------------ Add Task Container  ------------------  */
+
+#cont-addTask {
+    width: 100%;
+    margin-top: 5%;
+}
+
+.cont-add {
+    width: 100%;
+    display: flex;
+}
+
+textarea {
+    width: 70%;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    padding: 3%;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12pt;
+    margin-right: 4%;
+    background: rgb(232, 232, 232);
+    background: radial-gradient(circle, rgba(232, 232, 232, 1) 0%, rgba(208, 208, 208, 1) 100%);
+    border: 1px solid #858585;
+    -webkit-box-shadow: inset 0px 0px 5px 2px rgba(57, 57, 57, 0.13);
+    -moz-box-shadow: inset 0px 0px 5px 2px rgba(57, 57, 57, 0.13);
+    box-shadow: inset 0px 0px 5px 2px rgba(57, 57, 57, 0.13);
+}
+
+textarea:focus {
+    outline: none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.add-task {
+    width: 20%;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 1px solid #f68300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgb(255, 162, 115);
+    background: radial-gradient(circle, rgba(255, 162, 115, 1) 0%, rgba(255, 136, 0, 1) 100%);
+    -webkit-box-shadow: 0px 6px 0px -1px rgba(246, 131, 0, 1);
+    -moz-box-shadow: 0px 6px 0px -1px rgba(246, 131, 0, 1);
+    box-shadow: 0px 6px 0px -1px rgba(246, 131, 0, 1);
+}
+
+.add-task:active {
+    box-shadow: none;
+}
+
+.add-task p {
+    font-size: 32pt;
+    color: white;
+    margin: 0;
+    font-weight: 900;
+}
+
+.filters {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 2px solid #858585;
+    margin-bottom: 15px;
+    background: rgb(228, 228, 228);
+    background: linear-gradient(0deg, rgba(228, 228, 228, 1) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 63%, rgba(228, 228, 228, 1) 100%);
+}
+
+#task-info {
+    width: 30%;
+    text-align: center;
+    padding-top: 10px;
+    /* Borders */
+    border-radius: 20px 0px 0px 20px;
+    -moz-border-radius: 20px 0px 0px 20px;
+    -webkit-border-radius: 20px 0px 0px 20px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.all-button,
+.active-button,
+.completed-button {
+    width: 23.4%;
+    text-align: center;
+    padding-top: 10px;
+    border-left: 2px solid #858585;
+    cursor: pointer;
+}
+
+.all-button:hover,
+.active-button:hover,
+.completed-button:hover {
+    background: rgb(255, 162, 115);
+    background: radial-gradient(circle, rgba(255, 162, 115, 1) 0%, rgba(255, 136, 0, 1) 100%);
+}
+
+.all-button:active,
+.active-button:active,
+.completed-button:active {
+    background: rgb(255, 162, 115);
+    background: radial-gradient(circle, rgba(255, 162, 115, 1) 0%, rgba(255, 136, 0, 1) 100%);
+}
+
+.completed-button {
+    border-radius: 0px 20px 20px 0px;
+    -moz-border-radius: 0px 20px 20px 0px;
+    -webkit-border-radius: 0px 20px 20px 0px;
+}

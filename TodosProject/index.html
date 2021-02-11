@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ToDos</title>
+
+    <!-- ToDos Styles -->
+    <link rel="stylesheet" href="assets/css/ToDoStyles.css">
+</head>
+
+<body>
+    <section id="container">
+        <section id="cont-titles">
+            <h1>TODOS</h1>
+        </section>
+        <section id="cont-boxes" class="board">
+
+            <p class="preliminar">+ Create a new Task</p>
+
+            <!-- Styles Box -->
+            <!--<div class="box">
+                <div class="check">
+                    <div class="check-box">
+                        <img src="assets/images/uncheck.png" alt="...">
+                    </div>
+                </div>
+                <div class="title">Hacer la tarea de programación.</div>
+                <div class="delete">
+                    <div class="delete" onclick="this.parentNode.remove();">
+                    <div class="delete-box">
+                        <img src="assets/images/delete.png" alt="...">
+                    </div>
+                </div>
+            </div>-->
+
+
+        </section>
+        <section id="cont-addTask">
+            <div class="filters">
+                <div id="task-info">0 Tasks</div>
+                <div class="all-button" onclick="showAll()">All</div>
+                <div class="active-button" onclick="showActive()">Active</div>
+                <div class="completed-button" onclick="showCompleted()">Completed</div>
+            </div>
+            <div class="cont-add">
+                <textarea id="text" cols="30" rows="2" placeholder="Write a new Task"></textarea>
+                <div class="add-task" onclick="addTask()">
+                    <p>+</p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!--Scripts-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
