@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio | Arturo Ocampo</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <section class="box">
+        <h1>Week 09</h1>
+        <a href="index.html">Return Home</a><br><br>
+        <a href="https://arturoocampo.com/proyectos/w10/index.html">W10 Team Activity</a><br>
+        <br>
+        <br>
+        <article>
+            <h2>Readings</h2>
+            <h4>What is form validation?</h4>
+            <p>Go to any popular site with a registration form, and you will notice that they provide feedback when you don't enter your data in the format they are expecting. You'll get messages such as:</p>
+            <ul>
+                <li>"This field is required" (You can't leave this field blank).</li>
+                <li>"Please enter your phone number in the format xxx-xxxx" (A specific data format is required for it to be considered valid).</li>
+                <li>"Please enter a valid email address" (the data you entered is not in the right format).</li>
+                <li>"Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one symbol, and a number." (A very specific data format is required for your data).</li>
+                <p>This is called form validation. When you enter data, the browser and/or the web server will check to see that the data is in the correct format and within the constraints set by the application. Validation done in the browser is called
+                    client-side validation, while validation done on the server is called server-side validation. In this chapter we are focusing on client-side validation.</p>
+            </ul>
+            <p>Validating forms using JavaScript</p>
+            <img class="img-fluid" src="images/img-w10-01.png" alt="...">
+            <br>
+            <p>Using Fetch</p>
+            <p>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously
+                across the network.</p>
+            <img class="img-fluid" src="images/img-w10-02.png" alt="...">
+            <p>Here we are fetching a JSON file across the network and printing it to the console. The simplest use of fetch() takes one argument — the path to the resource you want to fetch — and returns a promise containing the response (a Response object).</p>
+            <p>This is just an HTTP response, not the actual JSON. To extract the JSON body content from the response, we use the json() method (defined on the Body mixin, which is implemented by both the Request and Response objects.)</p>
+            <p>Checking that the fetch was successful</p>
+            <p>A fetch() promise will reject with a TypeError when a network error is encountered or CORS is misconfigured on the server-side, although this usually means permission issues or similar — a 404 does not constitute a network error, for example.
+                An accurate check for a successful fetch() would include checking that the promise resolved, then checking that the Response.ok property has a value of true. The code would look something like this:</p>
+            <img class="img-fluid" src="images/img-w10-03.png" alt="...">
+            <p>Response objects</p>
+            <p>As you have seen above, Response instances are returned when fetch() promises are resolved.</p>
+            <p>The most common response properties you'll use are:</p>
+            <ul>
+                <li>Response.status — An integer (default value 200) containing the response status code.</li>
+                <li>Response.statusText — A string (default value ""), which corresponds to the HTTP status code message. Note that HTTP/2 does not support status messages.</li>
+                <li>Response.ok — seen in use above, this is a shorthand for checking that status is in the range 200-299 inclusive. This returns a Boolean.</li>
+            </ul>
+            <p>They can also be created programmatically via JavaScript, but this is only really useful in ServiceWorkers, when you are providing a custom response to a received request using a respondWith() method:</p>
+            <img class="img-fluid" src="images/img-w10-04.png" alt="...">
+        </article>
+    </section>
+</body>
+
+</html>
